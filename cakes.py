@@ -11,7 +11,6 @@ class PancakeStack:
         start = 0
         end = n - 1
         while start < end:
-            print("S: " + str(start) + "    E: " + str(end))
             self.stack[start], self.stack[end] = self.stack[end], self.stack[start]
             start += 1
             end -= 1
