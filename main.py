@@ -1,22 +1,22 @@
 import random
 from globals import *
 from cakes import PancakeStack
-SIZE = 10
-stack = list(range(1,SIZE + 1))
-random.shuffle(stack)
-def flip(stack: list, n: int) -> list:
-        newStack = list(stack);
-        if n > len(newStack) or n <= 0:
-            print("ERR: OOB")
-            return
-        start = 0
-        end = n - 1
-        while start < end:
-            newStack[start], newStack[end] = newStack[end], newStack[start]
-            start += 1
-            end -= 1
-        return newStack
-pancakes = PancakeStack(10)
-print(pancakes.stack)
-pancakes.flip(6)
-print(pancakes.stack)
+import utils as utils
+from priority import PriorityQueue
+finalFlipSequence = []
+algoChoice = 'Z'
+algoOptions = ('U', 'A')
+utils.promptUser("Which sorting algorithm would you like to use?", algoChoice, algoOptions);
+usingAStar = (algoChoice == 'A')
+# Create an initial list 1..n and shuffle. Then add the plate at the end
+initialStack = list(range(1, STACK_SIZE))
+random.shuffle(initialStack)
+initialStack.append(STACK_SIZE);
+initialCakes = PancakeStack(initialStack);
+# Set pq comparison fn depending on algorithm type
+pq_fn = (lambda stack: stack.heuristic + stack.cost) if usingAStar \
+        else (lambda stack: stack.heuristic)
+queue = PriorityQueue(pq_fn);
+
+print(initialCakes.stack)
+print(utils.flip(initialCakes, 9).stack)
