@@ -1,3 +1,12 @@
+'''
+priority.py
+2/28/2025
+Harry Lynch
+File containing definitions for the PriorityQueue class, the primary data structure
+which depends on the standard library heapq for the heap logic.  The pq function
+is a lambda dependent on what search type the user selects and is defined in
+globals.py and originally in main.py
+'''
 import heapq
 from typing import Callable
 from cakes import PancakeStack
