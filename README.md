@@ -3,18 +3,13 @@
 ### 2/28/2025
 ### Solving the Pancake Problem
 ---
-    1. Search Problem Definition
-
-    2. Possible Cost Function (Backward Cost)
-
-    3. Possible heuristic function (Forward Cost)
-
-    5.
----
 # About:
 
     This program is designed to solve the pancake problem in as few flips as
-    possible using two separate search algorithms, **UCS** and **A\***. My forward cost, or heuristic function used in A* is the 'gap heuristic' sourced from the paper linked in the usage section.  My backward cost, or cost function for both algos is merely the number of flips it takes to get to that individual state-- this allows both algorithms to prioritize finding the fewest flip solution.
+    possible using two separate search algorithms, **UCS** and **A\***. My forward cost, 
+    or heuristic function used in A* is the 'gap heuristic' sourced from the paper linked in the usage section.  
+    My backward cost, or cost function for both algos is merely the number of flips it takes to get to that 
+    individual state-- this allows both algorithms to prioritize finding the fewest flip solution.
 ---
 # Usage:
 
